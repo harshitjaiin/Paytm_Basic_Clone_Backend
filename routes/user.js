@@ -13,9 +13,11 @@ const signupBody = zod.object({
 	firstName: zod.string(),
 	lastName: zod.string(),
 	password: zod.string(),
+    balance:zod.string()
 })
 
 router.post("/signup", async (req, res) => {
+    console.log("Signed up!");
     const { success } = signupBody.safeParse(req.body)
     if (!success) {
         return res.status(411).json({
