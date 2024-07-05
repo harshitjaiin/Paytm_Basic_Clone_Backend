@@ -16,7 +16,11 @@ app.use(cors());
 // app.use(cors(corsOptions));
 
 // app.options('*', cors(corsOptions));
-
+app.get("/" , (req , res)=>{
+    res.status(201).json({
+        msg:"Hello World"
+    })
+})
 app.use(rootRouter);
 
 app.listen(3000);
